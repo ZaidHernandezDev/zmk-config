@@ -53,10 +53,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESCAPE  &kp KP_PLUS      &kp LS(MINUS)     &kp RA(MINUS)          &kp ASTERISK     &kp LEFT_PARENTHESIS    &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp N7        &kp N8        &kp N9        &kp BACKSPACE
-&kp TAB     &backtick_macro  &kp RA(A)         &kp GRAVE              &kp APOSTROPHE   &kp BACKSLASH           &potencia_macro  &kp SLASH          &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp N0
-&kp LSHFT   &kp LS(KP_PLUS)  &kp LS(NUMBER_1)  &kp RA(RIGHT_BRACKET)  &kp NON_US_BSLH  &kp LA(NON_US_BSLH)     &kp LS(N0)       &kp DOT            &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp RIGHT_SHIFT
-                                               &kp LCTRL              &trans           &kp SPACE               &kp RET          &trans             &kp LEFT_WIN
+&kp ESCAPE  &kp KP_EQUAL      &kp LS(MINUS)     &kp RA(MINUS)          &kp ASTERISK     &kp LEFT_PARENTHESIS    &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp N7        &kp N8        &kp N9        &kp BACKSPACE
+&kp TAB     &backtick_macro   &kp RA(Q)         &kp GRAVE              &kp APOSTROPHE   &kp BACKSLASH           &potencia_macro  &kp SLASH          &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp N0
+&kp LSHFT   &kp LS(KP_EQUAL)  &kp LS(NUMBER_1)  &kp RA(RIGHT_BRACKET)  &kp NON_US_BSLH  &kp LS(NON_US_BSLH)     &kp LS(N0)       &kp DOT            &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp RIGHT_SHIFT
+                                                &kp LCTRL              &trans           &kp SPACE               &kp RET          &trans             &kp LEFT_WIN
             >;
 
             label = "NUM";
@@ -81,10 +81,10 @@
 
         system {
             bindings = <
-&bootloader  &sys_reset    &none         &none         &none         &bt BT_CLR      &none   &kp F9  &kp F10  &kp F11  &kp F12  &none
-&none        &none         &none         &none         &kp LEFT_ALT  &none           &none   &kp F5  &kp F6   &kp F7   &kp F8   &none
-&none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none   &kp F1  &kp F2   &kp F3   &kp F4   &none
-                                         &trans        &trans        &trans          &trans  &trans  &trans
+&sys_reset  &none         &none         &none         &none         &bt BT_CLR      &none   &kp F9  &kp F10  &kp F11  &kp F12  &none
+&none       &none         &none         &none         &kp LEFT_ALT  &none           &none   &kp F5  &kp F6   &kp F7   &kp F8   &none
+&none       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none   &kp F1  &kp F2   &kp F3   &kp F4   &none
+                                        &trans        &trans        &trans          &trans  &trans  &trans
             >;
 
             label = "SYS";
