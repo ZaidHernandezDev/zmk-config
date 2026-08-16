@@ -119,6 +119,8 @@
 &kp LSHFT  &kp Z  &kp X  &kp C      &kp V  &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RALT
                          &kp LCTRL  &none  &kp SPACE    &kp ENTER  &none  &kp LGUI
             >;
+
+            label = "QWERTY";
         };
     };
 
