@@ -25,6 +25,28 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        RESET_SYS {
+            bindings = <&sys_reset>;
+            key-positions = <0 11>;
+            layers = <3>;
+        };
+
+        CLR_ALL_BT {
+            bindings = <&bt BT_CLR_ALL>;
+            key-positions = <5 6>;
+            layers = <3>;
+        };
+
+        qwerty {
+            bindings = <&to 4>;
+            key-positions = <38 39>;
+            layers = <3>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -38,7 +60,7 @@
             bindings = <
 &kp ESCAPE  &kp LEFT_BRACKET  &kp COMMA  &kp DOT    &kp P  &kp Y        &kp F    &kp G  &kp C         &kp R  &kp L  &kp BACKSPACE
 &kp TAB     &kp A             &kp O      &kp E      &kp U  &kp I        &kp D    &kp H  &kp T         &kp N  &kp S  &kp LEFT_ALT
-&kp LSHFT   &kp SEMI          &kp Q      &kp J      &kp K  &kp X        &kp B    &kp M  &kp W         &kp V  &kp Z  &kp RIGHT_SHIFT
+&kp LSHFT   &kp SEMI          &kp Q      &kp J      &kp K  &kp X        &kp B    &kp M  &kp W         &kp V  &kp Z  &kp RIGHT_ALT
                                          &kp LCTRL  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp LEFT_WIN
             >;
 
@@ -53,10 +75,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESCAPE  &kp EQUAL        &kp LS(MINUS)     &kp RA(MINUS)          &kp ASTERISK     &kp LEFT_PARENTHESIS    &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp N7        &kp N8        &kp N9        &kp BACKSPACE
-&kp TAB     &backtick_macro  &kp RA(Q)         &kp GRAVE              &kp APOSTROPHE   &kp BACKSLASH           &potencia_macro  &kp SLASH          &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp N0
-&kp LSHFT   &kp LS(EQUAL)    &kp LS(NUMBER_1)  &kp RA(RIGHT_BRACKET)  &kp NON_US_BSLH  &kp LS(NON_US_BSLH)     &kp LS(N0)       &kp DOT            &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp RIGHT_SHIFT
-                                               &kp LCTRL              &trans           &kp SPACE               &kp RET          &trans             &kp LEFT_WIN
+&kp ESCAPE  &kp SQT           &kp BACKSLASH          &kp LESS_THAN          &none      &none            &none            &none   &kp N7        &kp N8        &kp N9        &kp BACKSPACE
+&kp TAB     &kp EQUAL         &kp MINUS              &kp GRAVE              &none      &none            &potencia_macro  &kp N0  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp LEFT_ALT
+&kp LSHFT   &kp LS(NUMBER_1)  &kp LS(RIGHT_BRACKET)  &kp RA(RIGHT_BRACKET)  &kp LCTRL  &kp LS(SPACE)    &none            &none   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp RIGHT_ALT
+                                                     &none                  &trans     &none            &kp RET          &trans  &kp LEFT_WIN
             >;
 
             label = "NUM";
@@ -70,10 +92,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none         &kp LEFT_SHIFT  &kp LCTRL     &kp LEFT_WIN      &kp LEFT_ALT     &kp PRINTSCREEN    &none    &kp HOME  &kp END         &kp PAGE_UP   &kp PAGE_DOWN  &none
-&kp CAPSLOCK  &caps_word      &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT       &none              &none    &kp LEFT  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &none
-&none         &none           &kp C_VOL_DN  &kp C_MUTE        &kp C_VOLUME_UP  &none              &none    &none     &none           &none         &none          &none
-                                            &kp LCTRL         &trans           &kp SPACE          &kp RET  &trans    &kp LEFT_WIN
+&kp ESCAPE  &none         &none         &none             &none            &kp PRINTSCREEN    &kp INS  &kp HOME  &kp END         &kp PAGE_UP   &kp PAGE_DOWN  &kp BACKSPACE
+&caps_word  &kp CAPSLOCK  &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT       &none              &none    &kp LEFT  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT      &kp LEFT_ALT
+&none       &none         &kp C_VOL_DN  &kp C_MUTE        &kp C_VOLUME_UP  &none              &none    &none     &none           &none         &none          &kp RIGHT_ALT
+                                        &kp LCTRL         &trans           &kp SPACE          &kp RET  &trans    &kp LEFT_WIN
             >;
 
             label = "NAV";
@@ -81,13 +103,22 @@
 
         system {
             bindings = <
-&sys_reset  &none         &none         &none         &none         &bt BT_CLR      &none   &kp F9  &kp F10  &kp F11  &kp F12  &none
-&none       &none         &none         &none         &kp LEFT_ALT  &none           &none   &kp F5  &kp F6   &kp F7   &kp F8   &none
-&none       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none   &kp F1  &kp F2   &kp F3   &kp F4   &none
-                                        &trans        &trans        &trans          &trans  &trans  &trans
+&none      &none         &none         &none         &none         &none           &none  &kp F9  &kp F10   &kp F11  &kp F12  &none
+&none      &none         &none         &none         &none         &bt BT_CLR      &none  &kp F5  &kp F6    &kp F7   &kp F8   &kp LEFT_ALT
+&kp LSHFT  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &kp F1  &kp F2    &kp F3   &kp F4   &kp RIGHT_ALT
+                                       &kp LCTRL     &trans        &none           &none  &trans  &kp LWIN
             >;
 
             label = "SYS";
+        };
+
+        QWERTY {
+            bindings = <
+&kp ESC    &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&kp TAB    &kp A  &kp S  &kp D      &kp F  &kp G        &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp LALT
+&kp LSHFT  &kp Z  &kp X  &kp C      &kp V  &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RALT
+                         &kp LCTRL  &none  &kp SPACE    &kp ENTER  &none  &kp LGUI
+            >;
         };
     };
 
