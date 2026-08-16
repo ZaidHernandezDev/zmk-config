@@ -47,7 +47,7 @@
         };
 
         DVORAK {
-            bindings = <&mo 0>;
+            bindings = <&to 0>;
             key-positions = <37 40>;
             layers = <4>;
         };
